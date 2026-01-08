@@ -10,7 +10,9 @@ function addTask(text) {
     text,
     completed: false
   });
-}
+
+  saveTasks();
+};
 
 function toggleTask(id) {
   tasks = tasks.map(task =>
@@ -18,11 +20,27 @@ function toggleTask(id) {
       ? { ...task, completed: !task.completed }
       : task
   );
-}
+
+  saveTasks();
+};
 
 function deleteTask(id) {
   tasks = tasks.filter(task => task.id !== id);
-}
+
+  saveTasks();
+};
+
+function saveTasks() {
+  localStorage.setItem('tasks', JSON.stringify(tasks));
+};
+
+function loadTasks() {
+  const savedTasks = localStorage.getItem('tasks');
+
+  if (savedTasks) {
+    tasks = JSON.parse(savedTasks);
+  }
+};
 
 function renderTasks() {
   list.innerHTML = '';
@@ -50,7 +68,7 @@ function renderTasks() {
     li.append(span, deleteButton);
     list.appendChild(li);
   });
-}
+};
 
 form.addEventListener('submit', e => {
   e.preventDefault();
@@ -63,5 +81,6 @@ form.addEventListener('submit', e => {
 
   input.value = '';
 
+  saveTasks();
   renderTasks();
 });
