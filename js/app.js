@@ -81,6 +81,9 @@ form.addEventListener('submit', e => {
 
   input.value = '';
 
-  saveTasks();
+ 
   renderTasks();
 });
+
+loadTasks();
+renderTasks();
