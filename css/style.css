@@ -1,0 +1,80 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  font-family: Arial, sans-serif;
+}
+
+body {
+    min-height: 100vh;
+    background: #e4e8eb;
+    background-image: url(/to-do-list/images/background.jpg);
+    background-size: cover;
+    backdrop-filter: blur(10px);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color:rgb(11, 23, 94);
+    gap: 30px;
+}
+
+main {
+    background: #ffffff;
+    padding: 20px;
+    border-radius: 8px;
+    width: 400px;
+    box-shadow: 12px 5px 5px rgba(71, 71, 71, 60%);
+}
+
+header h1 {
+  text-align: center;
+  margin-bottom: 15px;
+  color:rgb(13, 54, 70);
+}
+
+form { 
+    display: flex;
+    gap: 10px;
+    margin-bottom: 15px;
+}
+
+input {
+    flex: 1;
+    padding: 8px;
+    border: none;
+    background-color: rgb(216, 247, 247);
+}
+
+button {
+    padding: 8px 12px;
+    cursor: pointer;
+    transition: transform 0.3s ease;
+    color: white;
+    background-color: rgb(240, 100, 7);
+    border: none;
+    border-radius: 20%;
+}
+
+button:hover {
+    transform: scale(1.2);
+}
+
+ul {
+    list-style: none;
+}
+
+li {
+    cursor: pointer;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px;
+    border-bottom: 1px solid #eee;
+    color: rgb(240, 100, 7);;
+}
+
+li.completed span {
+    text-decoration: line-through;
+    color: #999;
+} 
+
